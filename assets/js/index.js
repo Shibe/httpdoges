@@ -78,12 +78,14 @@ var statuses = {
 } 
 
 function generateHttpDogeElement (id, message) { 
+var container = document.createElement('div');
+container .classList ='doge-elements-wrapper'
+;
+
 var root = document.createElement('div');
 root .classList ='status-code-wrapper'
 ;
 root .id =`${id}`
-;
-root .style =`background: url(assets/images/${id}.png);`
 ;
 
 /*
@@ -93,14 +95,32 @@ root .style =`background: url(assets/images/${id}.png);`
         plz root.append with image
 */
 
-var description = document.createElement('span');
-description .classList ='status-code'
+var image = document.createElement('div');
+image .classList ='status-image'
 ;
-description .innerText =`${id} - ${message}`
+image .style =`background: url(assets/images/${id}.png);`
 ;
-root.append(description);
+root.append(image);
 
-return root
+var content = document.createElement('div');
+content .classList ='content'
+;
+root.append(content);
+
+var statusCode = document.createElement('div');
+statusCode .classList ='status-code'
+;
+statusCode .innerText =id
+;
+content.append(statusCode);
+
+var statusMessage = document.createElement('p');
+statusMessage .innerText =message
+;
+content.append(statusMessage);
+
+container.append(root);
+return container
 ;
 } 
 

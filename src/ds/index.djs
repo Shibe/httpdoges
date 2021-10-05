@@ -78,10 +78,12 @@ very statuses is obj
 wow
 
 such generateHttpDogeElement much id message
+    very container is plz dogeument.createElement with 'div'
+    container giv classList is 'doge-elements-wrapper'
+
     very root is plz dogeument.createElement with 'div'
     root giv classList is 'status-code-wrapper'
     root giv id is `${id}`
-    root giv style is `background: url(assets/images/${id}.png);`
 
     quiet
         very image is plz dogeument.createElement with 'img'
@@ -90,12 +92,26 @@ such generateHttpDogeElement much id message
         plz root.append with image
     loud
 
-    very description is plz dogeument.createElement with 'span'
-    description giv classList is 'status-code'
-    description giv innerText is `${id} - ${message}`
-    plz root.append with description
+    very image is plz dogeument.createElement with 'div'
+    image giv classList is 'status-image'
+    image giv style is `background: url(assets/images/${id}.png);`
+    plz root.append with image
 
-    amaze root
+    very content is plz dogeument.createElement with 'div'
+    content giv classList is 'content'
+    plz root.append with content
+
+    very statusCode is plz dogeument.createElement with 'div'
+    statusCode giv classList is 'status-code'
+    statusCode giv innerText is id
+    plz content.append with statusCode
+
+    very statusMessage is plz dogeument.createElement with 'p'
+    statusMessage giv innerText is message
+    plz content.append with statusMessage
+
+    plz container.append with root
+    amaze container
 wow
 
 very dogeElements = plz Object.entries with statuses&
