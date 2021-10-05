@@ -25,9 +25,10 @@ header {
     border: none;
     width: fit-content;
     border-radius: .25em;
+    cursor: pointer;
 }
 
-.copy-link-button img {
+#copy-link-button img {
     width: 20px;
 }
 
