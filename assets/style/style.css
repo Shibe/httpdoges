@@ -11,6 +11,16 @@ header {
     position: relative;
 }
 
+footer {
+    margin-top: 15px;
+    text-align: center;
+    color: #fff;
+}
+
+footer a {
+    color: #c2824a;
+}
+
 .actual-link {
     margin-bottom: 0 !important;
 }
