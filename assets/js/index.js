@@ -156,8 +156,10 @@ entry .onclick =zoomEvent
 ;
 } 
 
-document.querySelector('.close-zoomed-button')
-.onclick =function closeZoom () { 
-element .classList ='zoomed zoomed-hidden'
-;
+
+document.querySelector('#copy-link-button')
+.onclick =function copyLink () { 
+var link = document.querySelector('.actual-link')
+.innerText
+navigator.clipboard.writeText(link);
 } 

@@ -6,6 +6,76 @@ body {
     background-color: #222;
 }
 
+header {
+    padding: 20px;
+    position: relative;
+}
+
+.actual-link {
+    margin-bottom: 0 !important;
+}
+
+#copy-link-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 1em;
+    padding: 4px 20px 0px;
+    background: #c2824a;
+    border: none;
+    width: fit-content;
+    border-radius: .25em;
+}
+
+.copy-link-button img {
+    width: 20px;
+}
+
+.usage {
+    margin: 10px 10px 50px;
+}
+
+.usage span {
+    color: #fff;
+    font-size: 1.25em;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.usage code {
+    display: block;
+    background: #444;
+    font-size: 1em;
+    padding: 1em;
+    border-radius: 5px;
+    overflow-x: auto;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    color: #fff;
+    position: relative;
+}
+
+header div:first-of-type {
+    display: inline-block;
+}
+
+header div:last-of-type {
+    display: inline-block;
+    font-size: 3em;
+    color: #c2824a;
+    position: absolute;
+    top: 0;
+    height: max-content;
+    bottom: 0;
+    height: fit-content;
+    margin: auto;
+    margin-left: 20px;
+}
+
+header img {
+    width: 75px;
+}
+
 main {
     display: flex;
     flex-wrap: wrap;

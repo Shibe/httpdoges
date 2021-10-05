@@ -142,7 +142,10 @@ much very key as 0 next key smaller statusCodeWrappersSize next key more 1
     entry giv onclick is zoomEvent
 wow
 
-plz dogeument.querySelector with '.close-zoomed-button' &
-    giv onclick is such closeZoom
-        element giv classList is 'zoomed zoomed-hidden'
+
+plz dogeument.querySelector with '#copy-link-button' &
+    giv onclick is such copyLink
+        very link is plz dogeument.querySelector with '.actual-link' &
+            giv innerText
+        plz navigator.clipboard.writeText with link
     wow
