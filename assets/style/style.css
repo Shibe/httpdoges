@@ -19,6 +19,11 @@ main {
     max-height:300px;
     overflow: hidden;
     position: relative;
+    background-position: 50% !important;
+    background-repeat: no-repeat !important;
+    background-size: 140% !important;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
 }
 
 .status-code {

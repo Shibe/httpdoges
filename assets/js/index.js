@@ -83,13 +83,15 @@ root .classList ='status-code-wrapper'
 ;
 root .id =`${id}`
 ;
+root .style =`background: url(assets/images/${id}.png);`
+;
 
-var image = document.createElement('img');
-image .classList ='status-code-image'
-;
-image .src =`assets/images/${id}.png`
-;
-root.append(image);
+/*
+        very image is plz dogeument.createElement with 'img'
+        image giv classList is 'status-code-image'
+        image giv src is `assets/images/${id}.png`
+        plz root.append with image
+*/
 
 var description = document.createElement('span');
 description .classList ='status-code'

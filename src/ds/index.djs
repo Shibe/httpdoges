@@ -81,11 +81,14 @@ such generateHttpDogeElement much id message
     very root is plz dogeument.createElement with 'div'
     root giv classList is 'status-code-wrapper'
     root giv id is `${id}`
+    root giv style is `background: url(assets/images/${id}.png);`
 
-    very image is plz dogeument.createElement with 'img'
-    image giv classList is 'status-code-image'
-    image giv src is `assets/images/${id}.png`
-    plz root.append with image
+    quiet
+        very image is plz dogeument.createElement with 'img'
+        image giv classList is 'status-code-image'
+        image giv src is `assets/images/${id}.png`
+        plz root.append with image
+    loud
 
     very description is plz dogeument.createElement with 'span'
     description giv classList is 'status-code'
