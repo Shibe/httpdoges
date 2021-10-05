@@ -4,6 +4,7 @@
 
 body {
     background-color: #222;
+    padding: 1rem;
 }
 
 header {
@@ -104,12 +105,18 @@ main {
 }
 
 @media (min-width: 640px) {
+    body {
+        padding: 1rem 4rem;
+    }
     .doge-elements-wrapper {
         width: calc(50% - 1rem);
     }
 }
 
 @media (min-width: 900px) {
+    body {
+        padding: 1rem 8rem;
+    }
     .doge-elements-wrapper {
         width: calc(33.3333% - 1rem);
     }
