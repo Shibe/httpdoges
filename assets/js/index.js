@@ -7,6 +7,15 @@ var imageDir = 'assets/images/';
 var elementImage = document.querySelector('.zoomed img');
 var element = document.querySelector('.zoomed');
 
+jsony ={
+name: 'blah'
+} 
+
+var statusus = {
+100: { code: 100, message: 'Continue' }
+} 
+
+
 let statuses = {
 100: { code: 100, message: 'Continue' },
 101: { code: 101, message: 'Switching Protocols' },

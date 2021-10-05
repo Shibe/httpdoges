@@ -7,7 +7,7 @@ very imageDir is 'assets/images/'
 very elementImage is plz dogeument.querySelector with '.zoomed img'
 very element is plz dogeument.querySelector with '.zoomed'
 
-let statuses = {
+very statusus is obj
   100: { code: 100, message: 'Continue' },
   101: { code: 101, message: 'Switching Protocols' },
   102: { code: 102, message: 'Processing' },
@@ -75,7 +75,7 @@ let statuses = {
   523: { code: 523, message: 'Origin Is Unreachable' },
   525: { code: 525, message: 'SSL Handshake Failed' },
   599: { code: 599, message: 'Network Connect Timeout Error' },
-}
+wow
 
 such generateHttpDogeElement much id message
     very root is plz dogeument.createElement with 'div'
