@@ -7,16 +7,7 @@ var imageDir = 'assets/images/';
 var elementImage = document.querySelector('.zoomed img');
 var element = document.querySelector('.zoomed');
 
-jsony ={
-name: 'blah'
-} 
-
-var statusus = {
-100: { code: 100, message: 'Continue' }
-} 
-
-
-let statuses = {
+var statuses = {
 100: { code: 100, message: 'Continue' },
 101: { code: 101, message: 'Switching Protocols' },
 102: { code: 102, message: 'Processing' },
@@ -84,7 +75,7 @@ let statuses = {
 523: { code: 523, message: 'Origin Is Unreachable' },
 525: { code: 525, message: 'SSL Handshake Failed' },
 599: { code: 599, message: 'Network Connect Timeout Error' },
-}
+} 
 
 function generateHttpDogeElement (id, message) { 
 var root = document.createElement('div');

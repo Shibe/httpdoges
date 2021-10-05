@@ -7,7 +7,7 @@ very imageDir is 'assets/images/'
 very elementImage is plz dogeument.querySelector with '.zoomed img'
 very element is plz dogeument.querySelector with '.zoomed'
 
-very statusus is obj
+very statuses is obj
   100: { code: 100, message: 'Continue' },
   101: { code: 101, message: 'Switching Protocols' },
   102: { code: 102, message: 'Processing' },
