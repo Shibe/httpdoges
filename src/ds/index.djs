@@ -78,8 +78,9 @@ very statuses is obj
 wow
 
 such generateHttpDogeElement much id message
-    very container is plz dogeument.createElement with 'div'
+    very container is plz dogeument.createElement with 'a'
     container giv classList is 'doge-elements-wrapper'
+    container giv href is `assets/images/${id}.png`
 
     very root is plz dogeument.createElement with 'div'
     root giv classList is 'status-code-wrapper'
@@ -119,8 +120,6 @@ dose map with much [key value]
   shh wow sad no multiline support 
   amaze plz generateHttpDogeElement with value.code value.message
 wow&
-
-plz console.loge with dogeElements
 
 plz dogeElements.forEach with much element
   plz dogeument.querySelector with 'main' &

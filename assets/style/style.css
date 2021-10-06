@@ -31,7 +31,7 @@ footer a {
     top: 0;
     right: 0;
     margin: 1em;
-    padding: 4px 20px 0px;
+    padding: 14px 26px 8px;
     background: #c2824a;
     border: none;
     width: fit-content;
@@ -49,16 +49,20 @@ footer a {
 
 .usage span {
     color: #fff;
-    font-size: 1.25em;
+    font-size: 1.5em;
     margin-bottom: 16px;
     display: block;
+}
+
+.actual-link {
+    font-size: 1.25em !important;
 }
 
 .usage code {
     display: block;
     background: #444;
     font-size: 1em;
-    padding: 1em;
+    padding: 1.5em 1em;
     border-radius: 5px;
     overflow-x: auto;
     -webkit-justify-content: space-between;
@@ -73,7 +77,7 @@ header div:first-of-type {
 
 header div:last-of-type {
     display: inline-block;
-    font-size: 3em;
+    font-size: 2.2em;
     color: #c2824a;
     position: absolute;
     top: 0;
@@ -97,11 +101,20 @@ main {
     padding: 0;
 }
 
+.doge-elements-wrapper * {
+    color: #222 !important;
+}
+
 .doge-elements-wrapper {
     display: flex;
+    text-decoration: none;
     background-color: #c2824a6e;
     margin: 0.5rem;
     width: 100%;
+}
+
+.doge-elements-wrapper:hover .status-image {
+    opacity: 1;
 }
 
 @media (min-width: 640px) {
@@ -146,6 +159,7 @@ main {
     border-top-right-radius: 0.25rem;
     filter: contrast(70%);
     overflow: hidden;
+    opacity: .8;
     position: relative;
     transition: filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
 }

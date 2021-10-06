@@ -78,8 +78,10 @@ var statuses = {
 } 
 
 function generateHttpDogeElement (id, message) { 
-var container = document.createElement('div');
+var container = document.createElement('a');
 container .classList ='doge-elements-wrapper'
+;
+container .href =`assets/images/${id}.png`
 ;
 
 var root = document.createElement('div');
@@ -129,8 +131,6 @@ var dogeElements = Object.entries(statuses)
 // wow sad no multiline support 
 return generateHttpDogeElement(value.code, value.message);
 }) 
-
-console.log(dogeElements);
 
 dogeElements.forEach(function (element) { 
 document.querySelector('main')
