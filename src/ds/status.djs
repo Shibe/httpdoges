@@ -1,5 +1,3 @@
-very image is plz dogeument.querySelector with 'img'
-
 very pathname is window.location giv pathname
 very host is window.location giv host
 
