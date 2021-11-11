@@ -1,4 +1,4 @@
-#  dogehttp.code 
+# dogehttp.code 
 ![HTTP Cat picture](https://dogehttp.codes/assets/images/202.png)
 
 ## About
@@ -13,11 +13,7 @@ Currently not all HTTP status codes are covered. You are welcome to create an is
 
 You can clone it, replace the information with the new one and export as a JPG image.
 
-## Credits
-
-Thanks to [@shibe](https://github.com/shibe).
-
-Thanks to [@jmaasy](https://github.com/jmaasy).
-## License
-
-MIT
+## Contributors
+<a href="https://github.com/shibe/httpdoges/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=shibe/httpdoges" />
+</a>
