@@ -1,4 +1,4 @@
-# dogehttp.code
+# dogehttp.codes
 <p align="center">
   <img src="https://dogehttp.codes/assets/images/202.png"/>
 </p>
