@@ -195,3 +195,9 @@ main {
     font-size: 1rem;
     font-weight: 600;
 }
+
+.github-star {
+    position: absolute;
+    top:0;
+    right:0;
+}
