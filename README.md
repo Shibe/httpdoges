@@ -1,5 +1,5 @@
 # dogehttp.code 
-![HTTP Cat picture](https://dogehttp.codes/assets/images/202.png)
+![HTTP Doge](https://dogehttp.codes/assets/images/202.png)
 
 ## About
 
