@@ -1,8 +1,3 @@
-quiet
-    this script enables the zooming on the http code images
-    the script is entirely written in dogescript
-loud
-
 very imageDir is 'assets/images/'
 very elementImage is plz dogeument.querySelector with '.zoomed img'
 very element is plz dogeument.querySelector with '.zoomed'
