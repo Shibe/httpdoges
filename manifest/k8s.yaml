@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: ghcr.io/shibe/httpdoges:1089f2739f31377bea703541f8d39cececf23153
+        image: ghcr.io/shibe/httpdoges:bf215c70b1bf0e9cb7cf12ad7535430398426313
         imagePullPolicy: Always
         ports:
         - containerPort: 80
