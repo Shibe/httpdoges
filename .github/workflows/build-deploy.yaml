@@ -11,6 +11,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, 'Update image tag to')"
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -25,30 +26,54 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Login to Gitea Container Registry
+        continue-on-error: true
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ secrets.GITEA_REGISTRY_URL }}
+          username: ${{ secrets.GITEA_USERNAME }}
+          password: ${{ secrets.GITEA_TOKEN }}
+
       - name: Build Docker image
         run: |
-          IMAGE_REPO="ghcr.io/${GITHUB_REPOSITORY,,}"
+          GITHUB_IMAGE="ghcr.io/${GITHUB_REPOSITORY,,}"
+          GITEA_IMAGE="${{ secrets.GITEA_REGISTRY_URL }}/${GITHUB_REPOSITORY,,}"
           docker buildx build \
             --platform linux/arm64 \
-            -t $IMAGE_REPO:latest \
-            -t $IMAGE_REPO:${{ github.sha }} \
+            -t $GITHUB_IMAGE:latest \
+            -t $GITHUB_IMAGE:${{ github.sha }} \
+            -t $GITEA_IMAGE:latest \
+            -t $GITEA_IMAGE:${{ github.sha }} \
             --load .
 
-      - name: Push Docker image
+      - name: Push Docker image to GitHub
         run: |
-          IMAGE_REPO="ghcr.io/${GITHUB_REPOSITORY,,}"
-          docker push $IMAGE_REPO:latest
-          docker push $IMAGE_REPO:${{ github.sha }}
+          GITHUB_IMAGE="ghcr.io/${GITHUB_REPOSITORY,,}"
+          docker push $GITHUB_IMAGE:latest
+          docker push $GITHUB_IMAGE:${{ github.sha }}
+
+      - name: Push Docker image to Gitea
+        continue-on-error: true
+        run: |
+          GITEA_IMAGE="${{ secrets.GITEA_REGISTRY_URL }}/${GITHUB_REPOSITORY,,}"
+          docker push $GITEA_IMAGE:latest
+          docker push $GITEA_IMAGE:${{ github.sha }}
 
       - name: Update image in manifest
         run: |
           IMAGE_REPO="ghcr.io/${GITHUB_REPOSITORY,,}"
           sed -i "s|ghcr.io/.*/httpdoges:.*|$IMAGE_REPO:${{ github.sha }}|g" manifest/k8s.yaml
 
-      - name: Commit and push changes
-        run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-          git add manifest/k8s.yaml
-          git commit -m "Update image tag to ${{ github.sha }}"
-          git push
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "Update image tag to ${{ github.sha }}"
+          branch: update-image-${{ github.sha }}
+          title: "Update Docker image to ${{ github.sha }}"
+          body: |
+            This PR updates the Docker image tag in the Kubernetes manifest.
+            
+            - Image: ghcr.io/${{ github.repository }}:${{ github.sha }}
+            - Triggered by: ${{ github.event.head_commit.message }}
+          committer: github-actions <github-actions@github.com>
+          author: github-actions <github-actions@github.com>
